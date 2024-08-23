@@ -3,6 +3,7 @@
 	<PropertyGroup>
 		<TargetFramework>netstandard2.1</TargetFramework>
 		<Nullable>enable</Nullable>
+		<Version>0.0.1</Version>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<Title>osk C# nuget to support win-x64、 linux-arm64、linux-x64、linux-x86</Title>
 		<Authors>fallingrust</Authors>
@@ -10,6 +11,10 @@
 		<Description>Vosk C# nuget to support win-x64、 linux-arm64、linux-x64、linux-x86</Description>
 		<PackageProjectUrl>https://github.com/fallingrust/VoskSharp</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/fallingrust/VoskSharp</RepositoryUrl>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+	  <DebugType>none</DebugType>
 	</PropertyGroup>
 	<ItemGroup>
 		<None Include="runtimes\win-x64\native\*.*" Pack="true" PackagePath="runtimes\win-x64\native" PackageCopyToOutput="true" />
